@@ -10,11 +10,13 @@ public class TriangoloScaleno {
         l2 = lato2;
         l3 = lato3;
     }
+    
     public float CalcoloPerimetro(){
         float perimetro;
         perimetro = l1+l2+l3;
         return perimetro;
     }
+    
     public float CalcoloArea(){
         float perimetro;
         perimetro = l1+l2+l3;
