@@ -24,16 +24,16 @@ public class TriangoloScalenoTest {
         
         TriangoloScaleno triangoloS = new TriangoloScaleno (lato1,lato2,lato3);
         
-        lato1 = triangoloS.l1;
-        lato2 = triangoloS.l2;
-        lato3 = triangoloS.l3;
+        lato1     = triangoloS.l1;
+        lato2     = triangoloS.l2;
+        lato3     = triangoloS.l3;
         perimetro = triangoloS.CalcoloPerimetro();
-        area = triangoloS.CalcoloArea();
+        area      = triangoloS.CalcoloArea();
         
         System.out.println("lato 1    :" + lato1);
         System.out.println("lato 2    :" + lato2);
         System.out.println("lato 3    :" + lato3);
         System.out.println("perimetro :" + perimetro);
-        System.out.println("area      : %.2f/n" + area);
+        System.out.println("area      :" + area);
     }
 }
