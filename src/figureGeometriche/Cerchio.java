@@ -11,7 +11,7 @@ public class Cerchio {
         area = 3.14f*(r*r);
         return area;
     }
-    public float calcolaPerimetro (){
+    public float calcolaPerimetro (){ //funzione per calcolare perimetro
         float perimetro;
         perimetro = 3.14f*(r*2);
         return perimetro;
