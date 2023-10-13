@@ -7,22 +7,19 @@ public class CerchioTest {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
         
-        float raggio;
-        float area;
-        float perimetro;
+        float raggio, area, perimetro;
         
         System.out.print("Inserire il raggio del cerchio :");
         raggio = in.nextFloat();
         
         Cerchio cerchio = new Cerchio(raggio);
         
-        raggio = cerchio.r;
-        area = cerchio.calcolaArea ();
-        perimetro = cerchio.calcolaPerimetro();
+        System.out.print("Dati di input  :");
+        System.out.println(cerchio.info());
         
-        System.out.println("Raggio    :" + raggio);
-        System.out.println("Area      : %.2f/n" + area);
-        System.out.println("Perimetro : %.2f/n" + perimetro);
+        System.out.print("Dati di output :");
+        System.out.println("Area         :" + cerchio.calcolaArea());
+        System.out.println("Perimetro    :" + cerchio.calcolaPerimetro());
     }
     
 }

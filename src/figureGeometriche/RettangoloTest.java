@@ -7,27 +7,22 @@ public class RettangoloTest {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
         
-        float base;
-        float altezza;
-        float area;
-        float perimetro;
+        float base, altezza, area, perimetro;
         
-        System.out.print("Inserire la base del rettangolo    :");
+        System.out.print("Inserire la base del rettangolo    : ");
         base = in.nextFloat();
         
-        System.out.print("Inserire la altezza del rettangolo :");
+        System.out.print("Inserire la altezza del rettangolo : ");
         altezza = in.nextFloat();
         
         Rettangolo rettangolo = new Rettangolo (base,altezza);
-        base = rettangolo.b;
-        altezza = rettangolo.h;
-        area = rettangolo.calcolaArea();
-        perimetro = rettangolo.calcolaPerimetro();
         
-        System.out.println("Base :" + base);
-        System.out.println("Altezza :" + altezza);
-        System.out.println("Area :" + area);
-        System.out.println("Perimetro :" + perimetro);
+        System.out.print("Dati di input  :");
+        System.out.println(rettangolo.info());
+        
+        System.out.println("Dati di output : ");
+        System.out.print("Area             : " + rettangolo.calcolaArea());
+        System.out.print("Perimetro        : " + rettangolo.calcolaPerimetro());
     }
     
 }
