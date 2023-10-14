@@ -7,25 +7,21 @@ public class MoltiplicaioneTest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
-        float n1;
-        float n2;
-        float m;
+        float n1, n2;
         
-        System.out.print("inserire il primo numero :");
+        System.out.print("inserire il primo numero   : ");
         n1 = in.nextFloat();
         
-        System.out.print("inserire il secondo numero :");
+        System.out.print("inserire il secondo numero : ");
         n2 = in.nextFloat();
         
         Moltiplicazione moltiplicazione = new Moltiplicazione(n1,n2);
         
-        n1 = moltiplicazione.n1;
-        n2 = moltiplicazione.n2;
-        m = moltiplicazione.esegui();
+        System.out.println("Dati di input : ");
+        System.out.println(moltiplicazione.info());
         
-        System.out.println("numero 1        :" + n1);
-        System.out.println("numero 2        :" + n2);
-        System.out.println("moltiplicazione :" + m);
+        System.out.println("Dati di output  : ");
+        System.out.println("Moltiplicazione : " + moltiplicazione.esegui());
     }
     
 }
