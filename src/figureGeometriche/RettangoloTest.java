@@ -7,7 +7,7 @@ public class RettangoloTest {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
         
-        float base, altezza, area, perimetro;
+        float base, altezza;
         
         System.out.print("Inserire la base del rettangolo    : ");
         base = in.nextFloat();

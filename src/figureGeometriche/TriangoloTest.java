@@ -7,7 +7,7 @@ public class TriangoloTest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
-        float altezza, base, area;
+        float altezza, base;
         
         System.out.print("Inserire il valore dell'altezza : ");
         altezza = in.nextFloat();

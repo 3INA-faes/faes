@@ -7,7 +7,7 @@ public class TriangoloScalenoTest {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
         
-        float lato1, lato2, lato3, perimetro, area;
+        float lato1, lato2, lato3;
         
         System.out.print("Inserire il primo lato   : ");
         lato1 = in.nextFloat();

@@ -7,7 +7,7 @@ public class CerchioTest {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
         
-        float raggio, area, perimetro;
+        float raggio;
         
         System.out.print("Inserire il raggio del cerchio :");
         raggio = in.nextFloat();
