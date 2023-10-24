@@ -112,6 +112,4 @@ public class TriangoloRettangolo {
                 "lato : "    + lato    + "\n";
         return testo;
     }
-    
-    
 }
