@@ -11,7 +11,8 @@ public class Numero {
     
     /**
      * costruttore senza parametri
-     * 
+     * {@link #setNumero1(int)} <br>
+     * {@link #setNumero2(int)} <br>
      */
     public Numero (){
         
