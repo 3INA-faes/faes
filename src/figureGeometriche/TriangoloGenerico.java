@@ -123,6 +123,17 @@ public class TriangoloGenerico {
      * @return 
      */
     public String tipo(){
+        String tipo = "";
+        if ((l1 == l2)&&(l2 == l3))
+            tipo = "equilatero";
+        if ((l1 == l2 && l2 != l3)||(l1 == l3 && l1 != l2)||(l2 == l3 && l3 != l1)) 
+            tipo = "isoscele";
+        if ((l1 != l2) && (l2 != l3) && (l1 != l3)) 
+            tipo = "scaleno";
+        return tipo;
+    }
+    
+    public String tipo1(){
         String tipo;
         if ((l1 == l2)&&(l2 == l3)){
             tipo = "equilatero";
@@ -130,6 +141,20 @@ public class TriangoloGenerico {
             tipo = "isoscele";
         } else {
             tipo = "scaleno";
+        }
+        return tipo;
+    }
+
+    public String tipo2(){
+        String tipo ;
+        if ((l1 == l2)&&(l2 == l3)){
+            tipo = "equilatero";
+        } else {
+            if ((l1 == l2 && l2 != l3)||(l1 == l3 && l1 != l2)||(l2 == l3 && l3 != l1)) {
+                tipo = "isoscele";
+            } else {
+                tipo = "scaleno";
+            }
         }
         return tipo;
     }
@@ -154,5 +179,7 @@ public class TriangoloGenerico {
         System.out.println("Il perimetro è: " + t.perimetro());
         System.out.println("L'area è:       " + t.area());
         System.out.println("Il triangolo è: " + t.tipo());
+        System.out.println("Il triangolo è: " + t.tipo1());
+        System.out.println("Il triangolo è: " + t.tipo2());
     }
 }
