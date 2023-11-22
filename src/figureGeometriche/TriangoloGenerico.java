@@ -3,6 +3,8 @@ package figureGeometriche;
 import java.util.Scanner;
 /**
  * dati i lati di un triangolo, stabilire il tipo, perimetro e area
+ * inoltre verificare se è possibile costruire un triangolo
+ * Un triangolo é possibile solo se la lunghezza di ciascun lato è maggiore della somma delle altre due
  * @author dennis.faes 3INA 2023
  * @verion 1.0
  */
@@ -157,6 +159,13 @@ public class TriangoloGenerico {
             }
         }
         return tipo;
+    }
+    
+    public boolean IlTriangoloPossibile(){
+        boolean possibile = false;
+        if ((l1+l2 < l3) && (l2+l3 < l1) && (l1+l3 < l2))
+            boolean = true;
+        return possibile;
     }
     
     public static void main(String[] args) {
