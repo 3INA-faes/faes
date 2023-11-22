@@ -20,7 +20,7 @@ public class Numero1Test {
         System.out.println("I dati di output sono: ");
         System.out.println(n.info());
         System.out.println("Il numero è: " + n.pariDispari());
-        System.out.println("Il numero rispetto a 0 é: " + n.maggioreMinoreUguale());
+        System.out.println("Il numero rispetto a 0 é: " + n.maggioreMinoreUgualeAZero());
     }
     
 }

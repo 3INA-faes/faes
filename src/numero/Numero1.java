@@ -59,7 +59,7 @@ public class Numero1 {
      * Metodo che restituisce come risultato se il numero è maggiore, minore o uguale a 0
      * @return 
      */
-    public String maggioreMinoreUguale (){
+    public String maggioreMinoreUgualeAZero (){
         String risultato;
         if (numero1 > 0){
             risultato = "maggiore";
