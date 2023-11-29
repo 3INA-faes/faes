@@ -164,7 +164,7 @@ public class TriangoloGenerico {
     public boolean IlTriangoloPossibile(){
         boolean possibile = false;
         if ((l1+l2 < l3) && (l2+l3 < l1) && (l1+l3 < l2))
-            boolean = true;
+            possibile = true;
         return possibile;
     }
     
