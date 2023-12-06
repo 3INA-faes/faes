@@ -9,7 +9,9 @@ import java.util.Scanner;
  * @verion 1.0
  */
 public class TriangoloGenerico {
-    public float l1, l2 ,l3;
+    final private float NF_TE;
+    private float l1, l2 ,l3;
+    private String unitaMisura;
 
     /**
      * Costruttore senza parametri <br>
@@ -18,17 +20,28 @@ public class TriangoloGenerico {
      * {@link #setL3(float) }      <br>
      */
     public TriangoloGenerico() {
+        NF_TE = 0.289f;
+        unitaMisura = "";
     }
 
     /**
      * Costruttore con i parametri
      */
     public TriangoloGenerico(float l1, float l2, float l3) {
+        this();
         this.l1 = l1;
         this.l2 = l2;
         this.l3 = l3;
     }
 
+    /**
+     * Metodo che restituisce il valore di NF_TE
+     * @return 
+     */
+    public float getNF_TE() {
+        return NF_TE;
+    }
+    
     /**
      * Metodo che restituisce il valore del primo lato
      * @return 
@@ -75,6 +88,22 @@ public class TriangoloGenerico {
      */
     public void setL3(float l3) {
         this.l3 = l3;
+    }
+
+    /**
+     * Metodo che restituisce il valore dell'unità di misura
+     * @return 
+     */
+    public String getUnitaMisura() {
+        return unitaMisura;
+    }
+
+    /**
+     * Imposta/Modifica il valore del primo lato
+     * @param unitaMisura unitaMisura
+     */
+    public void setUnitaMisura(String unitaMisura) {
+        this.unitaMisura = unitaMisura;
     }
     
     /**
@@ -161,11 +190,29 @@ public class TriangoloGenerico {
         return tipo;
     }
     
-    public boolean IlTriangoloPossibile(){
+    public boolean isTriangolo(){
         boolean possibile = false;
-        if ((l1+l2 < l3) && (l2+l3 < l1) && (l1+l3 < l2))
+        if ((l1+l2 > l3) && (l2+l3 > l1) && (l1+l3 > l2))
             possibile = true;
         return possibile;
+    }
+    
+    public float apotema(){
+        float a;
+        if(tipo().equals("equilatero"))
+            a = l1 * NF_TE;
+        else
+            a = 0;
+        return a;
+    }
+    
+    public float calcolaAltezza(){
+        float altezza;
+        if(tipo().equals("equilatero"))
+            altezza = l1 * (float)(Math.sqrt(3)/2);
+        else
+            altezza = 0;
+        return altezza;
     }
     
     public static void main(String[] args) {
@@ -184,11 +231,41 @@ public class TriangoloGenerico {
         
         TriangoloGenerico t = new TriangoloGenerico(l1, l2, l3);
         
+        t.setUnitaMisura("cm");
+        
         System.out.println(t.info());
-        System.out.println("Il perimetro è: " + t.perimetro());
-        System.out.println("L'area è:       " + t.area());
-        System.out.println("Il triangolo è: " + t.tipo());
-        System.out.println("Il triangolo è: " + t.tipo1());
-        System.out.println("Il triangolo è: " + t.tipo2());
+        if(t.isTriangolo() == true){
+            System.out.println("Il perimetro è: " + t.perimetro() + " " + t.getUnitaMisura());
+            System.out.println("L'area è:       " + t.area() + " " + t.getUnitaMisura());
+            System.out.println("Il triangolo è: " + t.tipo());
+            System.out.println("Il triangolo è: " + t.tipo1());
+            System.out.println("Il triangolo è: " + t.tipo2());
+        } else {
+            System.out.println("Il triangolo non è possibile");
+        }
+
+        
+        if(t.isTriangolo() == true){
+            System.out.println("Sì");
+        } else {
+            System.out.println("No");
+        }
+        
+        String testo;
+        if(t.isTriangolo() == true){
+            testo = "Sì";
+        } else {
+            testo = "No";
+        }
+        
+        if(t.isTriangolo() == true){
+            System.out.println(t.calcolaAltezza());
+        } else {
+            System.out.println(t.calcolaAltezza());
+        }
+        
+        //operatore ternario o if sdraiato
+        testo = t.isTriangolo()? "Sì" : "No";
+        System.out.println(testo);
     }
 }
