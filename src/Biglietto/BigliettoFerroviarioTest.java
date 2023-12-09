@@ -23,7 +23,7 @@ public class BigliettoFerroviarioTest {
         
         System.out.println("Dati di input: " + b.info());
         
-        System.out.println("L'importo da pagare è: " + b.importo());
+        System.out.println(b.importo());
     }
     
 }
