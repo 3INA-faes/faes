@@ -1,21 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Biglietto;
 
-/**
- *
- * @author dennis.faes
- */
+import java.util.Scanner;
+
 public class BigliettoFerroviarioTest {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner in = new Scanner(System.in);
+        
+        float tariffa;
+        String condizioneUtente;
+        
+        System.out.println("Inserire la tariffa del biglietto: ");
+        tariffa = in.nextFloat();
+        
+        System.out.println("Se l'utente é pensionato inserire un (P), se è uno "
+                + "studente inserire (S), se é disoccupato inserire (D) e se non"
+                + " riguarda queste caratteristiche inserire (N): ");
+        in.nextLine();
+        condizioneUtente = in.nextLine();
+        
+        BigliettoFerroviario b = new BigliettoFerroviario(tariffa,condizioneUtente);
+        
+        System.out.println("Dati di input: " + b.info());
+        
+        System.out.println("L'importo da pagare è: " + b.importo());
     }
     
 }
