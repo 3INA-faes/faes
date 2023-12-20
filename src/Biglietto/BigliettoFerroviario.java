@@ -70,19 +70,23 @@ public class BigliettoFerroviario {
         String i;
         float importo;
         switch (condizioneUtente){
-            case "P":
+            case "P": 
+            case "p":
                 importo = tariffa-(tariffa*0.10f);
                 i = "La tariffa è di: " + importo;
                 break;
-            case "S": 
+            case "S":
+            case "s":
                 importo = tariffa-(tariffa*0.15f);
                 i = "La tariffa è di: " + importo;
                 break;
             case "D":
+            case "d":
                 importo = tariffa-(tariffa*0.25f);
                 i = "La tariffa è di: " + importo;
                 break;
             case "N":
+            case "n":
                 importo = tariffa;
                 i = "La tariffa è di: " + importo;
                 break;

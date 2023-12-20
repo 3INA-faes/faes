@@ -16,8 +16,7 @@ public class BigliettoFerroviarioTest {
         System.out.println("Se l'utente é pensionato inserire un (P), se è uno "
                 + "studente inserire (S), se é disoccupato inserire (D) e se non"
                 + " riguarda queste caratteristiche inserire (N): ");
-        in.nextLine();
-        condizioneUtente = in.nextLine();
+        condizioneUtente = in.next();
         
         BigliettoFerroviario b = new BigliettoFerroviario(tariffa,condizioneUtente);
         
@@ -25,5 +24,4 @@ public class BigliettoFerroviarioTest {
         
         System.out.println(b.importo());
     }
-    
 }
