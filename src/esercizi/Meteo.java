@@ -119,9 +119,9 @@ public class Meteo {
      * @return
      */
     public String consiglio3() {
-        String testo ="";
-        if (temperatura >= 0){
-            if (temperatura > 0){
+        String testo;
+        if (temperatura <= 25){
+            if (temperatura <= 20){
                 if (temperatura <= 15){
                     if (temperatura <= 10){
                         if (temperatura<= 5){
