@@ -1,4 +1,4 @@
-package esercizi;
+package esercizi.laboratorio;
 
 /**
  * La classe meteo serve per dare dei consigli in base alla temperatura
@@ -120,34 +120,34 @@ public class Meteo {
      */
     public String consiglio3() {
         String testo;
-        if (temperatura <= 25){
-            if (temperatura <= 20){
-                if (temperatura <= 15){
-                    if (temperatura <= 10){
-                        if (temperatura<= 5){
-                            if(temperatura <= 0){
-                                if (temperatura == 0){
-                                    testo = "Si va a sciare!";
+        if (temperatura >= 0){
+            if (temperatura > 0){
+                if (temperatura >5){
+                    if (temperatura > 10){
+                        if (temperatura > 15){
+                            if(temperatura > 20){
+                                if (temperatura > 25){
+                                    testo = "condizionatore a manetta!";
                                 } else {
-                                    testo = "attenti al ghiaccio!";
+                                    testo = "tutti al mare!";
                                 }
                             } else {
-                                testo = "ci vuole il cappellino!";
+                                testo = "magari!";
                             }
                         } else {
-                            testo = "basta il piumino!";
+                            testo = "solo il maglioncino!"; 
                         }
                     } else {
-                        testo = "solo il maglioncino!";    
+                        testo = "basta il piumino!"; 
                     }
                 } else {
-                    testo = "magari!";
+                    testo = "ci vuole il cappellino!";
                 }
             } else {
-               testo = "tutti al mare!"; 
+                testo = "Si va a sciare!";
             }
         } else {
-            testo = "condizionatore a manetta!";
+            testo = "attenti al ghiaccio!";
         }
         return testo;
     }
