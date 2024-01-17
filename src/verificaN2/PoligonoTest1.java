@@ -45,6 +45,9 @@ public class PoligonoTest1 {
         System.out.println("Inserire il valore della lunghezza del lato: ");
         p.setLunghezza(in.nextFloat());
         
+        if (p.isPoligono1() == false){
+            System.out.println("Dati errati reinserire: ");
+        }
         } while (p.isPoligono1() == false);
         
         System.out.println("Dati di input: " + p.info());
