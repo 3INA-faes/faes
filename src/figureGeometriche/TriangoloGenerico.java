@@ -26,6 +26,10 @@ public class TriangoloGenerico {
 
     /**
      * Costruttore con i parametri
+     * 
+     * @param l1
+     * @param l2
+     * @param l3
      */
     public TriangoloGenerico(float l1, float l2, float l3) {
         this();
