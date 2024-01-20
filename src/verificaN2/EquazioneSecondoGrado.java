@@ -91,42 +91,36 @@ public class EquazioneSecondoGrado {
      * Metodo che restituisce il valore di x1
      * @return 
      */
-    public String x1(){
-        String testo;
+    public float x1(){
         float x1;
         if (delta() > 0){
             x1 = (float)(-b + Math.sqrt(delta()))/2;
-            testo = "x1 vale:" +x1;
         } else {
             if (delta() == 0){
                 x1 = -b/2*a;
-                testo = "x1 vale:" +x1;
             } else {
-                testo = "L'equazione non ha soluzioni reali";
+                x1 = 0;
             }
         }
-        return testo;
+        return x1;
     }
 
     /**
      * Metodo che restituisce il valore di x2
      * @return 
      */
-    public String x2(){
-        String testo;
+    public float x2(){
         float x2;
         if (delta() > 0){
             x2 = (float)(-b - Math.sqrt(delta()))/2;
-            testo = "x2 vale:" +x2;
         } else {
             if (delta() == 0){
                 x2 = -b/2*a;
-                testo = "x2 vale:" +x2;
             } else {
-                testo = "L'equazione non ha soluzioni reali";
+                x2 = 0;
             }
         }
-        return testo;
+        return x2;
     }
     
     /**
