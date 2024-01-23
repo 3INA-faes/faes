@@ -1,4 +1,4 @@
-package esercizi;
+package esercizi.classe;
 
 import java.util.Scanner;
 
@@ -15,5 +15,7 @@ public class TabellinaTest {
         Tabellina t = new Tabellina(numero);
         
         System.out.println(t.tabellina());
+        System.out.println(t.numeroCifre());
+        System.out.println(t.fattoriale());
     }
 }
