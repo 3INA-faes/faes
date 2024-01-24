@@ -8,43 +8,7 @@ package esercizi.laboratorio;
  * @author denni.faes 3INA 2023
  * @version 1.0
  */
-public class NumeriPariEDispari {
-
-    private int numero;
-
-    /**
-     * Costruttore senza parametri{@link #setNumero(int)}
-     */
-    public NumeriPariEDispari() {
-    }
-
-    /**
-     * Costruttore con i parametri
-     *
-     * @param numero numero
-     */
-    public NumeriPariEDispari(int numero) {
-        this.numero = numero;
-    }
-
-    /**
-     * Restituisce il valore del numero
-     *
-     * @return
-     */
-    public int getNumero() {
-        return numero;
-    }
-
-    /**
-     * Imposta/Modifica il valore del numero
-     *
-     * @param numero numero
-     */
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-    
+public class NumeriPariDispari { 
     /**
      * Metodo che restituisce un menu
      * 
@@ -52,10 +16,8 @@ public class NumeriPariEDispari {
      */
     public static String menu(){
         String testo;
-        testo = "1 - Istanziare costruttore senza parametri" + "\n" +
-                "2 - Istanziare costruttore con i parametri" + "\n" +
-                "3 - visualizzazione dei primi n numeri pari" + "\n" +
-                "4 - visualizzazione dei primi n numeri dispari";
+        testo = "1 - visualizzazione dei primi n numeri pari" + "\n" +
+                "2 - visualizzazione dei primi n numeri dispari";
         return testo;
     }
 
@@ -64,7 +26,7 @@ public class NumeriPariEDispari {
      *
      * @return
      */
-    public String primiNNumeriDispari() {
+    public static String primiNNumeriDispari(int numero) {
         String testo = "I primi n numeri dispari sono: \n";
         int risultato;
         risultato = numero;
@@ -88,7 +50,7 @@ public class NumeriPariEDispari {
      *
      * @return
      */
-    public String primiNNumeriPari() {
+    public static String primiNNumeriPari(int numero) {
         String testo = "I primi n numeri pari sono: \n";
         int risultato;
         risultato = numero;
@@ -113,7 +75,7 @@ public class NumeriPariEDispari {
      *
      * @return
      */
-    public String primiNNumeriDispari1() {
+    public static String primiNNumeriDispari1(int numero) {
         String testo = "I primi n numeri dispari sono: \n";
         int risultato = 1;
 
@@ -129,7 +91,7 @@ public class NumeriPariEDispari {
      *
      * @return
      */
-    public String primiNNumeriPari1() {
+    public static String primiNNumeriPari1(int numero) {
         String testo = "I primi n numeri pari sono: \n";
         int risultato = 0;
         int i = 0;
@@ -141,14 +103,5 @@ public class NumeriPariEDispari {
         }
         return testo;
     }
-    /**
-     * Metodo che restituisce il valore degli attributi
-     * 
-     * @return 
-     */
-    public String info() {
-        String testo;
-        testo = "Il numero è: " + numero;
-        return testo;
-    }
 }
+
