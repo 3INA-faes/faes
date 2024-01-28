@@ -95,6 +95,21 @@ public class Tabellina {
         return testo;
     }
     
+    public String tavolaPitagorica(){
+        int risultato = 0;
+        String tavola = "Tavola pitagorica: \n" + 
+                        "\t1 \t" + "2 \t" + "3 \t" + "4 \t" + "5 \t" + "6 \t" + "7 \t" + "8 \t" + "9 \t" + "10 \t" + "\n";
+        for (int i = 1; i <= 10; i++){
+            tavola += "Riga" + i + " \t";
+            for(int j = 1; j <= 10; j++){
+                risultato = i * j;
+                tavola += risultato + "\t";
+            }
+            tavola += "\n";
+        }
+        return tavola;
+    }
+    
     /**
      * Restituisce il valore degli attributi
      *

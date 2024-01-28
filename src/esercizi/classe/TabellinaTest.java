@@ -13,9 +13,11 @@ public class TabellinaTest {
         numero = in.nextInt();
         
         Tabellina t = new Tabellina(numero);
-        
+        /*
         System.out.println(t.tabellina());
         System.out.println(t.numeroCifre());
         System.out.println(t.fattoriale());
+        */
+        System.out.println(t.tavolaPitagorica());
     }
 }
