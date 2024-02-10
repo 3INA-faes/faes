@@ -17,14 +17,15 @@ public class SuperEnalotto {
         num4 = (int) (Math.random()*9)+1;
         num5 = (int) (Math.random()*9)+1;
         num6 = (int) (Math.random()*9)+1;
-        numeri = num1 + "\t" + num2 + "\t" + num3 + "\t" + num4 + "\t" + num5 + "\t" + num6;
+        numeri = num1 + "\t" + num2 + "\t" + num3 + "\t" + num4 + "\t" + num5 + "\t" + num6 + "\t";
         return numeri;
     }
     
     
     public static String gioco1(){
         int num1, num2, num3, num4, num5, num6;
-        boolean verifica;
+        String testo;
+        boolean verifica = false;
         do{
         num1 = (int) (Math.random()*9)+1;
         num2 = (int) (Math.random()*9)+1;
@@ -32,13 +33,14 @@ public class SuperEnalotto {
         num4 = (int) (Math.random()*9)+1;
         num5 = (int) (Math.random()*9)+1;
         num6 = (int) (Math.random()*9)+1;
-        if ((num1 != num2) && (num1 != num3) && (num1 != num4) && (num1 != num5) && (num1 != num6)){
-            if ((num2 != num3) && (num2 != num4) && (num2 != num5) && (num2 != num6)){
-                
-            }
+        if ((num1 != num2) && (num1 != num3) && (num1 != num4) && (num1 != num5) && (num1 != num6) && 
+            (num2 != num3) && (num2 != num4) && (num2 != num5) && (num2 != num6) && 
+            (num3 != num4) && (num3 != num5) && (num3 != num6) &&
+            (num4 != num5) && (num4 != num6) && (num5 != num6)){
+            verifica = true;
         }
-            
-            
-        }while ();
+        }while (verifica == false);
+        testo = num1 + "\t" + num2 + "\t" + num3 + "\t" + num4 + "\t" + num5 + "\t" + num6 + "\t";
+        return testo;
     }
 }
