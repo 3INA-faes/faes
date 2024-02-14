@@ -95,6 +95,12 @@ public class Data {
         return is;
     }
     
+    public int contaGiorni(){
+        int giorni = 0;
+        while ()
+        return giorni;
+    }
+    
     public String info(){
         String data = "";
         if (isDataValida() == true){
