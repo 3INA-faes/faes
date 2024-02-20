@@ -10,15 +10,24 @@ package esercizi.laboratorio;
  * @author dennis.faes
  */
 public class Data {
-    private int giorno, mese, anno;
+    private int giorno, mese, anno, giorno1, mese1, anno1;
 
     public Data() {
     }
 
-    public Data(int giorno, int mese, int anno) {
+    public Data(int giorno, int mese, int anno){
+        this.giorno = giorno;
+        this.mese = mese;
+        this.anno = anno; 
+    }
+    
+    public Data(int giorno, int mese, int anno, int giorno1, int mese1, int anno1) {
         this.giorno = giorno;
         this.mese = mese;
         this.anno = anno;
+        this.giorno1 = giorno1;
+        this.mese1 = mese1;
+        this.anno1 = anno1;
     }
 
     public int getGiorno() {
@@ -45,7 +54,7 @@ public class Data {
         this.anno = anno;
     }
 
-    public boolean isDataValida(){
+    public boolean isDataValida(int giorno, int mese, int anno){
         boolean isAnno = false;
         boolean isMese = false;
         boolean isGiorno = false;
@@ -95,15 +104,33 @@ public class Data {
         return is;
     }
     
-    public int contaGiorni(){
-        int giorni = 0;
-        while ()
-        return giorni;
+    public int nGiorni(int giorno, int mese, int anno, int giorno1, int mese1, int anno1){
+        int nGiorni = 0;
+        
+        int [] primaData = {this.giorno,this.mese,this.anno};
+        int [] secondaData = {this.giorno1,this.mese1,this.anno1};
+        
+        while(true){
+            if(primaData == secondaData){
+                break;
+            }
+            nGiorni++;
+            giorno += 1;
+            if(isDataValida(giorno, mese, anno) == false){
+                giorno = 0;
+                mese += 1;
+                if (mese == 13){
+                    mese = 0;
+                    anno++;
+                }
+            }
+        }
+        return nGiorni;
     }
     
     public String info(){
         String data = "";
-        if (isDataValida() == true){
+        if (isDataValida(giorno, mese, anno) == true){
             if (giorno >= 1  && giorno <= 9){
                 data += "0" + giorno + "/";
             } else {
