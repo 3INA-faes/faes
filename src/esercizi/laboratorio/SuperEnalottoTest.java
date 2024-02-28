@@ -8,12 +8,13 @@ public class SuperEnalottoTest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
+        int numero;
         int [] tentativo = new int[6];
         int [] soluzione;
 
         soluzione = SuperEnalotto.gioco2();
         
-        for (int i = 1; i <= 6; i ++){
+        for (int i = 0; i < 6; i ++){
             System.out.println("Inserire il " + i + "° numero:");
             tentativo[i] = in.nextInt();
         }
