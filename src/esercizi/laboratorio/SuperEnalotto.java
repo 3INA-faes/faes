@@ -2,7 +2,7 @@ package esercizi.laboratorio;
 
 /**
  * Realizzare il gioco del SuperEnalotto semplificato consideriamo pertanto le seguenti ipotesi:
- * - i numeri univoci da indovinare sono 6, generati casualmente da 1 a 9;
+ * - i pènumeri univoci da indovinare sono 6, generati casualmente da 1 a 9;
  * - per vincere, i numeri scelti dall'utente devono essere nella stessa sequenza di quelli generati dalla classe.
  * @author dennis.faes  3INA 2023
  * @version 1.0
@@ -42,5 +42,13 @@ public class SuperEnalotto {
         }while (verifica == false);
         testo = num1 + "\t" + num2 + "\t" + num3 + "\t" + num4 + "\t" + num5 + "\t" + num6 + "\t";
         return testo;
+    }
+    
+    public static int [] gioco2(){
+        int [] array = new int [6];
+        for (int i = 0; i < array.length; i++ ){
+            array[i] =(int)(Math.random()*99)+1;
+        }
+        return array;
     }
 }
