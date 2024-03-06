@@ -116,10 +116,10 @@ public class Data {
         this.giorno = g;
         this. mese = m;
         this.anno = a;
-        
+
         int nGiorni = 0;
         
-        int [] primaData = {this.giorno,this.mese,this.anno};
+        int [] primaData = {giorno,mese,anno};
         int [] secondaData = {giorno1,mese1,anno1};
         
         while(true){
@@ -127,13 +127,13 @@ public class Data {
                 break;
             }
             nGiorni++;
-            giorno += 1;
-            if(isDataValida(giorno, mese, anno) == false){
-                giorno = 0;
-                mese += 1;
-                if (mese == 13){
-                    mese = 0;
-                    anno++;
+            primaData[0] += 1;
+            if(isDataValida(primaData[0], primaData[1], primaData[2]) == false){
+                primaData[0] = 0;
+                primaData[1] += 1;
+                if (primaData[1] == 13){
+                    primaData[1] = 1;
+                    primaData[2]++;
                 }
             }
         }

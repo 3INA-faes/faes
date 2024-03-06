@@ -8,8 +8,6 @@ public class DataTest {
         Scanner in = new Scanner(System.in);
         
         int giorno, mese, anno, giorno1, mese1, anno1;
-        
-        Data d1 = new Data();
         /*
         do{
             System.out.println("Inserire il giorno: ");
@@ -28,7 +26,6 @@ public class DataTest {
             
         }while(d.isDataValida(giorno,mese,anno) == false);
         */
-        do{
             System.out.println("Inserire il giorno: ");
             giorno = in.nextInt();
         
@@ -48,10 +45,8 @@ public class DataTest {
             anno1 = in.nextInt();
             
             Data d = new Data(giorno, mese, anno);
-            d1 = d;
             
-            System.out.println(d1.nGiorni(giorno, mese, anno, giorno1, mese1, anno1));
-            System.out.println(d1.info());
-        }while(d1.isDataValida(giorno, mese, anno) == false || d1.isDataValida(giorno1, mese1, anno1) == false);
+            if(d.isDataValida(giorno, mese, anno) == true && d.isDataValida(giorno1, mese1, anno1) == true)
+            System.out.println(d.nGiorni(giorno, mese, anno, giorno1, mese1, anno1));
     }
 }
