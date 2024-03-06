@@ -5,14 +5,21 @@
  */
 package esercizi.laboratorio;
 
+import java.util.Arrays;
+import java.time.LocalDate;
+
 /**
  * 
  * @author dennis.faes
  */
 public class Data {
-    private int giorno, mese, anno, giorno1, mese1, anno1;
+    private int giorno, mese, anno;
 
     public Data() {
+        LocalDate d = LocalDate.now();
+        this.giorno = d.getDayOfMonth();
+        this.mese = d.getMonthValue();
+        this.anno = d.getYear();
     }
 
     public Data(int giorno, int mese, int anno){
@@ -20,22 +27,15 @@ public class Data {
         this.mese = mese;
         this.anno = anno; 
     }
-    
-    public Data(int giorno, int mese, int anno, int giorno1, int mese1, int anno1) {
-        this.giorno = giorno;
-        this.mese = mese;
-        this.anno = anno;
-        this.giorno1 = giorno1;
-        this.mese1 = mese1;
-        this.anno1 = anno1;
-    }
 
     public int getGiorno() {
         return giorno;
     }
 
     public void setGiorno(int giorno) {
-        this.giorno = giorno;
+        if (isDataValida(giorno, mese, anno)){
+           this.giorno = giorno; 
+        }
     }
 
     public int getMese() {
@@ -43,7 +43,9 @@ public class Data {
     }
 
     public void setMese(int mese) {
-        this.mese = mese;
+        if (isDataValida(giorno, mese, anno)){
+           this.mese = mese; 
+        }
     }
 
     public int getAnno() {
@@ -51,10 +53,16 @@ public class Data {
     }
 
     public void setAnno(int anno) {
-        this.anno = anno;
+        if (isDataValida(giorno, mese, anno)){
+           this.anno = anno; 
+        }
     }
 
-    public boolean isDataValida(int giorno, int mese, int anno){
+    public boolean isDataValida(int g, int m, int a){
+        this.giorno = g;
+        this. mese = m;
+        this.anno = a;
+        
         boolean isAnno = false;
         boolean isMese = false;
         boolean isGiorno = false;
@@ -104,14 +112,18 @@ public class Data {
         return is;
     }
     
-    public int nGiorni(int giorno, int mese, int anno, int giorno1, int mese1, int anno1){
+    public int nGiorni(int g, int m, int a, int giorno1, int mese1, int anno1){
+        this.giorno = g;
+        this. mese = m;
+        this.anno = a;
+        
         int nGiorni = 0;
         
         int [] primaData = {this.giorno,this.mese,this.anno};
-        int [] secondaData = {this.giorno1,this.mese1,this.anno1};
+        int [] secondaData = {giorno1,mese1,anno1};
         
         while(true){
-            if(primaData == secondaData){
+            if(Arrays.toString(primaData).equals(Arrays.toString(secondaData))){
                 break;
             }
             nGiorni++;

@@ -9,7 +9,7 @@ public class DataTest {
         
         int giorno, mese, anno, giorno1, mese1, anno1;
         
-        Data d = new Data();
+        Data d1 = new Data();
         /*
         do{
             System.out.println("Inserire il giorno: ");
@@ -47,13 +47,11 @@ public class DataTest {
             System.out.println("Inserire il anno: ");
             anno1 = in.nextInt();
             
-            Data d1 = new Data(giorno, mese, anno, giorno1, mese1, anno1);
-            d = d1;
+            Data d = new Data(giorno, mese, anno);
+            d1 = d;
             
-            System.out.println(d.nGiorni(giorno, mese, anno, giorno1, mese1, anno1));
+            System.out.println(d1.nGiorni(giorno, mese, anno, giorno1, mese1, anno1));
             System.out.println(d1.info());
-        }while(d.isDataValida(giorno,mese,anno) == false || d.isDataValida(giorno1,mese1,anno1) == false);
-        
-        
+        }while(d1.isDataValida(giorno, mese, anno) == false || d1.isDataValida(giorno1, mese1, anno1) == false);
     }
 }
