@@ -20,11 +20,22 @@ public class SuperEnalotto1 {
                     && (array[2] != array[3]) && (array[2] != array[4]) && (array[2] != array[5])
                     && (array[3] != array[4]) && (array[3] != array[5]) && (array[4] != array[5])) {
                 
-                if(Arrays.toString(num).equals(Arrays.toString(array))){
-                    testo = "Hai vinto, sta volta hai avuto fortuna" + "\n" +
-                            Arrays.toString(array);
-                }else{
-                    testo += "I numeri corretti sono: " + Arrays.toString(array);
+                boolean isVinto = true, primoControllo = true;
+                for(int i = 0; i < array.length; i++){
+                    if(primoControllo == true){
+                        for(int y = 0; y < num.length; y++){
+                            primoControllo = false;
+                            if(array[y] == num[i]){
+                                primoControllo = true;
+                                break;
+                            }
+                        }
+                    } else {
+                        isVinto = false;    
+                    }
+                }
+                if(isVinto == true){
+                    testo = "Hai vinto";
                 }
                 break;
             }
