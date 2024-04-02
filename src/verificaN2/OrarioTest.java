@@ -1,4 +1,4 @@
-package faes;
+package verificaN2;
 
 import java.util.Scanner;
 

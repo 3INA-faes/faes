@@ -1,4 +1,4 @@
-package faes;
+package verificaN2;
 
 import java.util.Scanner;
 
@@ -18,10 +18,8 @@ public class DivisoriMultipliTest {
                     DivisoriMultipli d = new DivisoriMultipli();
                     System.out.println("Inserire un numero (n): ");
                     n = in.nextInt();
-                    d.setN(n);
                     System.out.println("Inserire un numero (m): ");
                     m = in.nextInt();
-                    d.setM(m);
                     break;
                 case 2:
                     System.out.println("I divisori positivi di n sono: " + DivisoriMultipli.numeroDivisori(n));
@@ -30,9 +28,6 @@ public class DivisoriMultipliTest {
                     System.out.println("Gli m multipli di n sono: " + DivisoriMultipli.sommaMultipli(n, m));
                     break;
                 case 4:
-                    System.out.println(DivisoriMultipli.info());
-                    break;
-                case 5:
                     exit = false;
                     break;
                 default:

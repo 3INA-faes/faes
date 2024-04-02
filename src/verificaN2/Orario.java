@@ -1,4 +1,6 @@
-package faes;
+package verificaN2;
+
+import java.util.Date;
 
 /**
  * Progettare, implementare e curare la documentazione di una classe che, dato
@@ -11,6 +13,7 @@ package faes;
  * @version 1.0
  */
 public class Orario {
+    Date d = new Date();
 
     private int s, m, o;
 
@@ -20,6 +23,9 @@ public class Orario {
      * {@link #setO(int) }
      */
     public Orario() {
+        s = d.getSeconds();
+        m = d.getMinutes();
+        o = d.getHours();
     }
 
     /**
@@ -50,7 +56,8 @@ public class Orario {
      * @param s s
      */
     public void setS(int s) {
-        this.s = s;
+        if(isValido(s, this.m, this.o) == true)
+            this.s = s;
     }
 
     /**
@@ -68,7 +75,8 @@ public class Orario {
      * @param m m
      */
     public void setM(int m) {
-        this.m = m;
+        if(isValido(this.s, m, this.o) == true)
+            this.m = m;
     }
 
     /**
@@ -86,7 +94,8 @@ public class Orario {
      * @param o o
      */
     public void setO(int o) {
-        this.o = o;
+        if(isValido(this.s, this.m, o) == true)
+            this.o = o;
     }
 
     /**
