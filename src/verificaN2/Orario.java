@@ -1,6 +1,6 @@
 package verificaN2;
 
-import java.util.Date;
+import java.time.LocalTime;
 
 /**
  * Progettare, implementare e curare la documentazione di una classe che, dato
@@ -13,7 +13,7 @@ import java.util.Date;
  * @version 1.0
  */
 public class Orario {
-    Date d = new Date();
+    LocalTime l = LocalTime.now();
 
     private int s, m, o;
 
@@ -23,9 +23,9 @@ public class Orario {
      * {@link #setO(int) }
      */
     public Orario() {
-        s = d.getSeconds();
-        m = d.getMinutes();
-        o = d.getHours();
+        s = l.getSecond();
+        m = l.getMinute();
+        o = l.getHour();
     }
 
     /**
@@ -36,9 +36,9 @@ public class Orario {
      * @param o o
      */
     public Orario(int s, int m, int o) {
-        this.s = s;
-        this.m = m;
-        this.o = o;
+        setS(s); //this.s = s;
+        setM(m); //this.m = m;
+        setO(o); //this.o = o;
     }
 
     /**
@@ -56,7 +56,7 @@ public class Orario {
      * @param s s
      */
     public void setS(int s) {
-        if(isValido(s, this.m, this.o) == true)
+        if(isValido())
             this.s = s;
     }
 
@@ -75,7 +75,7 @@ public class Orario {
      * @param m m
      */
     public void setM(int m) {
-        if(isValido(this.s, m, this.o) == true)
+        if(isValido())
             this.m = m;
     }
 
@@ -94,10 +94,23 @@ public class Orario {
      * @param o o
      */
     public void setO(int o) {
-        if(isValido(this.s, this.m, o) == true)
+        if(isValido())
             this.o = o;
     }
 
+    /**
+     * Metodo che restituisce se l'orario è valido
+     * 
+     * @return 
+     */
+    public boolean isValido(){
+        boolean valido = false;
+        
+        valido = isValido(s, m, o);
+        
+        return valido;
+    }
+    
     /**
      * Metodo che restituisce se l'orario è valido
      * @param secondi
@@ -105,8 +118,11 @@ public class Orario {
      * @param ore
      * @return 
      */
-    public boolean isValido(int secondi, int minuti, int ore){
+    public static boolean isValido(int secondi, int minuti, int ore){
         boolean valido = false;
+        
+        //if(ore >= 0 && ore <= 23 && minuti >= 0 && minuti <= 59 && secondi >= 0 && secondi <= 59){
+        
         if(ore >= 0 && ore <= 23){
             if(minuti >= 0 && minuti <= 59){
                 if(secondi >= 0 && secondi <= 59){
@@ -125,8 +141,10 @@ public class Orario {
      * @param o
      * @return totSecondi
      */
-    public int secondiEquivalenti(int s, int m, int o) {
-        int totSecondi = s + (m * 60) + (o * 60 * 60);
+    public static int secondiEquivalenti(int s, int m, int o) {
+        int totSecondi = 0;
+        if (isValido(s, m, o))
+            totSecondi = s + (m * 60) + (o * 60 * 60);
         return totSecondi;
     }
 
@@ -136,7 +154,7 @@ public class Orario {
      * @return totMinuti
      */
     public int minutiEquivalenti() {
-        int totMinuti = m + (o * 60);
+        int totMinuti = secondiEquivalenti(s, m, o) / 60;
         return totMinuti;
     }
 
@@ -146,7 +164,7 @@ public class Orario {
      * @return totOre
      */
     public int oreEquivalenti() {
-        int totOre = o;
+        int totOre = minutiEquivalenti() / 60;
         return totOre;
     }
 
@@ -159,12 +177,22 @@ public class Orario {
      */
     public int differenzaSecondi(int sec, int min, int ore) {
         int diff = 0;
-        if(isValido(this.s, this.m, this.o) == true && isValido(sec, min, ore) == true){
+
+        if(isValido() == true && isValido(sec, min, ore) == true){
             diff = Math.abs(secondiEquivalenti(this.s, this.m, this.o) - secondiEquivalenti(sec, min, ore));
         }
         return diff;
     }
 
+    public int differenzaInsecondiNew(Orario o){
+        int diff = 0;
+
+        if(isValido() == true && isValido(o.getS(), o.getM(), o.getO()) == true){
+            diff = Math.abs(secondiEquivalenti(this.s, this.m, this.o) - secondiEquivalenti(o.getS(), o.getM(), o.getO()));
+        }
+        return diff;
+    }
+    
     /**
      * Metodo che restituisce l'orario nella corretta forma
      *
@@ -172,7 +200,7 @@ public class Orario {
      */
     public String info() {
         String testo = "Data non valida ";
-        if(isValido(this.s, this.m, this.o) == true){
+        if(isValido()){
             if (o < 10) {
                 testo = "0" + o + ":";
             } else {
