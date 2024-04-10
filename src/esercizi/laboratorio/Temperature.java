@@ -116,14 +116,14 @@ public class Temperature {
     public String temperaturaPiuBassa() {
         String testo = "";
         ordinaCrescente();
-        testo += giorni[0] + valoriTemperature[0];
+        testo += giorni[0] + "\t" + valoriTemperature[0];
         return testo;
     }
     
     public String temperaturaPiuAlta() {
         String testo = "";
         ordinaDecrescente();
-        testo += giorni[0] + valoriTemperature[0];
+        testo += giorni[0] + "\t" + valoriTemperature[0];
         return testo;
     }
     
@@ -179,25 +179,25 @@ public class Temperature {
         giorno = giorno.toLowerCase();
         int numgiorno = 7;
         switch (giorno) {
-            case "lunedì ":
+            case "lunedì":
                 numgiorno = 0;
                 break;
-            case "martedì ":
+            case "martedì":
                 numgiorno = 1;
                 break;
-            case "mercoledì ":
+            case "mercoledì":
                 numgiorno = 2;
                 break;
-            case "giovedì ":
+            case "giovedì":
                 numgiorno = 3;
                 break;
-            case "venerdì ":
+            case "venerdì":
                 numgiorno = 4;
                 break;
-            case "sabato ":
+            case "sabato":
                 numgiorno = 5;
                 break;
-            case "domenica ":
+            case "domenica":
                 numgiorno = 6;
                 break;
             default:  
