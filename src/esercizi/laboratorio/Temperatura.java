@@ -17,7 +17,7 @@ public class Temperatura {
             System.out.println("Inserire la " + i + "° temperatura del " + i + "° giorno della settimana: ");
             temperatura = in.nextFloat();
             i++; 
-        }while(Temperature.riempi(temperatura));
+        }while(t.riempi(temperatura));
 
         
         System.out.println(t.mediaTemperaturaSettimanale());

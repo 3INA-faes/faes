@@ -9,21 +9,39 @@ package esercizi.laboratorio;
  */
 public class Temperature {
 
-    private static float[] valoriTemperature;
+    private float[] valoriTemperature;
+    private String[] giorni;
     private final static int LUNGHEZZA = 7;
-    private static int indice = 0;
+    private int indice = 0;
+    private int prova;
 
     public Temperature() {
         valoriTemperature = new float[7];
+        giorni = new String[]{"lunedì","martedì","mercoledì","giovedì","venerdì","sabato","domenica"};
+    }
+
+    public int getProva() {
+        return prova;
+    }
+
+    public void setProva(int prova) {
+        this.prova = prova;
     }
     
     public float[] getValoriTemperature() {
-        return valoriTemperature;
+        float [] temp = new float[7];
+        for (int i = 0; i < temp.length; i++) {
+            temp[i] = valoriTemperature[i];
+        }
+        return temp;
     }
     
     public void setValoriTemperature(float[] valTemp) {
         if (isValido(valTemp)) {
-            this.valoriTemperature = valTemp;
+            //System.arraycopy(valTemp, 0, this.valoriTemperature, 0, valoriTemperature.length);
+            for (int i = 0; i < valoriTemperature.length; i++) {
+                this.valoriTemperature[i] = valTemp[i];
+            }
         }
     }
 
@@ -35,7 +53,7 @@ public class Temperature {
         return LUNGHEZZA;
     }
     
-    public static boolean riempi(float temp){
+    public boolean riempi(float temp){
         boolean vuoto = true;
         valoriTemperature [indice] = temp;
         indice ++;
@@ -47,7 +65,7 @@ public class Temperature {
 
     public boolean isValido(float[] controllo) {
         boolean valido = false, tempValida = true;
-        if (controllo.length > 7) {
+        if (controllo.length == 7) {
             for (int i = 0; i < controllo.length; i++) {
                 if (controllo[i] < -90 || controllo[i] > 60) {
                     tempValida = false;
@@ -70,24 +88,89 @@ public class Temperature {
         return media;
     }
 
-    public float temperaturaPiuBassa() {
+    /*
+    public String temperaturaPiuBassa() {
+        String testo = "";
         float tempPiuBassa = valoriTemperature[0];
         for (int i = 1; i < valoriTemperature.length; i++) {
             if (tempPiuBassa > valoriTemperature[i]) {
                 tempPiuBassa = valoriTemperature[i];
+                testo = tempPiuBassa + giorni[i];
             }
         }
-        return tempPiuBassa;
+        return testo;
     }
 
-    public float temperaturaPiuAlta() {
+    public String temperaturaPiuAlta() {
+        String testo = "";
         float tempPiuAlta = valoriTemperature[0];
         for (int i = 1; i < valoriTemperature.length; i++) {
             if (tempPiuAlta < valoriTemperature[i]) {
                 tempPiuAlta = valoriTemperature[i];
+                testo = tempPiuAlta + giorni[i];
             }
         }
-        return tempPiuAlta;
+        return testo;
+    }
+    */
+    public String temperaturaPiuBassa() {
+        String testo = "";
+        ordinaCrescente();
+        testo += giorni[0] + valoriTemperature[0];
+        return testo;
+    }
+    
+    public String temperaturaPiuAlta() {
+        String testo = "";
+        ordinaDecrescente();
+        testo += giorni[0] + valoriTemperature[0];
+        return testo;
+    }
+    
+    private void ordinaCrescente() {
+        String testo;
+        float temp;
+        boolean scambio;
+        int k = valoriTemperature.length - 1;
+        do {
+            scambio = false;
+            for (int y = 0; y < k; y++) {
+                if (valoriTemperature[y] > valoriTemperature[y + 1]) {
+                    temp = valoriTemperature[y];
+                    valoriTemperature[y] = valoriTemperature[y + 1];
+                    valoriTemperature[y + 1] = temp;
+                    testo = giorni[y];
+                    giorni[y] = giorni[y +1];
+                    giorni[y +1] = testo;
+                    scambio = true;
+                }
+            }
+            k--;
+        } while (scambio == true);
+
+    }
+    
+    private void ordinaDecrescente() {
+        String testo;
+        float temp;
+        boolean scambio;
+        int k = valoriTemperature.length - 1;
+        do {
+            scambio = false;
+            for (int y = 0; y < k; y++) {
+                if (valoriTemperature[y] < valoriTemperature[y + 1]) {
+                    temp = valoriTemperature[y];
+                    valoriTemperature[y] = valoriTemperature[y + 1];
+                    valoriTemperature[y + 1] = temp;
+                    testo = giorni[y];
+                    giorni[y] = giorni[y +1];
+                    giorni[y +1] = testo;
+                    scambio = true;
+                }
+            }
+            k--;
+        } while (scambio == true);
+
     }
 
     public boolean aggiungiTemperatura(String giorno, float temperatura) {
@@ -127,5 +210,9 @@ public class Temperature {
         }
         
         return isPresente;
+    }
+    
+    public void modificaProva(){
+        prova = 100;
     }
 }
