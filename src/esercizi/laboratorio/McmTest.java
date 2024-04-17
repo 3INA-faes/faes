@@ -6,16 +6,17 @@ public class McmTest {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        int lunghezza, num;
         
-        int num1, num2;
+        System.out.println("Inserisci i numeri di cui si voglia trovare il minimo comune multiplo: ");
+        lunghezza = in.nextInt();
         
-        System.out.println("Inserire il primo numero: ");
-        num1 = in.nextInt();
+        Mcm m = new Mcm(lunghezza);
         
-        System.out.println("Inserire il secondo numero: ");
-        num2 = in.nextInt();
-        
-        Mcm m = new Mcm(num1, num2);
+        do{
+            System.out.println("Inserisci i valori dei numeri: ");
+            num = in.nextInt();
+        }while(m.riempiVettoreNumeri(num));
         
         System.out.println("Il minimo comune multiplo é : " + m.calcoloMCM());
     }
