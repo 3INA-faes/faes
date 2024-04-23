@@ -2,12 +2,11 @@ package esercizi.laboratorio;
 
 public class Mcm {
     /*
-    private int num1, num2, num3;
+    private int num1, num2;
 
-    public Mcm(int num1, int num2, int num3) {
+    public Mcm(int num1, int num2) {
         this.num1 = num1;
         this.num2 = num2;
-        this.num3 = num3;
     }
 
     public Mcm() {
@@ -28,19 +27,11 @@ public class Mcm {
     public void setNum2(int num2) {
         this.num2 = num2;
     }
-
-    public int getNum3() {
-        return num3;
-    }
-
-    public void setNum3(int num3) {
-        this.num3 = num3;
-    }
     
     public int calcoloMCM(){
         int mcm = 0;
         for(int i = 1; i > 0; i++){
-            if((this.num1*i)%this.num2 == 0 && (this.num1*i)%this.num3 == 0){
+            if((this.num1*i)%this.num2 == 0){
                 mcm = this.num1*i;
                 break;
             }
@@ -54,58 +45,43 @@ public class Mcm {
         return testo;
     }
     */
-    
-    private int [] num;
-    private final int LUNGHEZZA;
-    private int indice = 0;
-    
-    public Mcm(int lunghezza) {
-        this.num = new int[lunghezza];
-        this.LUNGHEZZA = lunghezza;
+    private String numeri;
+
+    public Mcm() {
     }
 
-    public int[] getNum() {
-        return num;
+    public Mcm(String numeri) {
+        this.numeri = numeri;
     }
 
-    public void setNum(int[] num) {
-        this.num = num;
+    public String getNumeri() {
+        return numeri;
     }
 
-    public int getLUNGHEZZA() {
-        return LUNGHEZZA;
-    }
-
-    public int getIndice() {
-        return indice;
-    }
-    
-    public boolean riempiVettoreNumeri(int numero){
-        boolean vuoto = true;
-        num[indice] = numero;
-        indice++;
-        if(indice >= num.length){
-            vuoto = false;
-        }
-        return vuoto;
+    public void setNumeri(String numeri) {
+        this.numeri = numeri;
     }
     
     public int calcoloMCM(){
-        int mcm = 0;
-        boolean isMCM;
-        int primoNum = num[0];
-        for(int i = 1; i > 0; i++){
-            isMCM = true;
-            for(int y = 1; y < num.length; y++){
-                if(primoNum*i%num[y] != 0){
-                    isMCM = false;
+        int mcm;
+        String [] strNumeri = this.numeri.split(",");
+        int [] vetNumeri = new int [strNumeri.length];
+        for(int i = 0; i < strNumeri.length; i++){
+            vetNumeri[i] = Integer.parseInt(strNumeri[i]);
+        }
+        int y = 0;
+        mcm = vetNumeri[0];
+        boolean ripeti;
+        do{
+            y++;
+            ripeti = false;
+            for(int i = 1; i < vetNumeri.length; i++){
+                if((mcm*y)%vetNumeri[i] != 0){
+                    ripeti = true;
                 }
             }
-            if(isMCM){
-                mcm = primoNum*i;
-                break;
-            }
-        }
+        }while(ripeti);
+        mcm *= y;
         return mcm;
     }
     
