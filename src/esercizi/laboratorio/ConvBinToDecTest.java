@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ConvBinToDecTest {
 
     public static void main(String[] args) {
+        /*
         Scanner in = new Scanner(System.in);
         
         int bit, lunghezza;
@@ -20,6 +21,17 @@ public class ConvBinToDecTest {
             bit = in.nextInt();
         }while(c.riempi(bit));
         
+        System.out.println("Il valore in decimale è: " + c.conversione());
+        */
+        Scanner in = new Scanner(System.in);
+        
+        String testo;
+        
+        System.out.println("Inserisci il numero binario");
+        testo = in.nextLine();
+        
+        ConvBinToDev c = new ConvBinToDev(testo);
+
         System.out.println("Il valore in decimale è: " + c.conversione());
     }
     

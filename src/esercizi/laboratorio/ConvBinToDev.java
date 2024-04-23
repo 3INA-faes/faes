@@ -1,6 +1,7 @@
 package esercizi.laboratorio;
 
 public class ConvBinToDev {
+    /*
     private int binario[];
     private int lunghezza;
     private int indice = 0;
@@ -70,4 +71,37 @@ public class ConvBinToDev {
         }
         return decimale;
     }
+    */
+    private String binario;
+
+    public ConvBinToDev() {
+    }
+
+    public ConvBinToDev(String binario) {
+        this.binario = binario;
+    }
+
+    public String getBinario() {
+        return binario;
+    }
+
+    public void setBinario(String binario) {
+        this.binario = binario;
+    }
+    
+    public int conversione(){
+        int decimale = 0, bit;
+        int i = binario.length() - 1;
+        int j = 0;
+        while(i >= 0){
+            bit = this.binario.charAt(i) - '0';
+            i--;
+            if(bit == 1){
+                decimale += Math.pow(2, j);
+            }
+            j++;
+        }
+        return decimale;
+    }
+    
 }
