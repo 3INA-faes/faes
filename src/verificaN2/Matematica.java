@@ -1,4 +1,4 @@
-package faes;
+package verificaN2;
 
 /**
  * Classe Matematica che ha il compito di calcolare il mcm, il mcd, la
